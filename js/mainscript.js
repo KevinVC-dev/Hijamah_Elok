@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (currentPath.includes(basePath)) {
                         currentPath = currentPath.split(basePath)[0];
                     }
-                    const fullPath = `${window.location.origin}${currentPath}${basePath}${urls[className]}`;
+                    const fullPath = `${window.location.origin}${currentPath}${urls[className]}`;
                     window.location.href = fullPath;
                 }
             });
