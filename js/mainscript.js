@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuForMemi = document.querySelector(".menuForMemi");
     const options = document.querySelectorAll(".option1, .option2, .option3, .sendWA, .usersGuide, .everyButton");
 
-    const basePath = "/HijamahElok/"; // Base path from root
+    const basePath = "https://kevinvc-dev.github.io/Hijamah_Elok/"; // Base path from root
     const urls = {
         "option1": "services/index.html",
         "option2": "contact_business/index.html",
