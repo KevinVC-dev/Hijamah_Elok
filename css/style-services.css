@@ -1,0 +1,1050 @@
+/*Initialize the website*/
+html {width: 100%;
+    height: 100%;
+}
+/*Set the cursor customizations*/
+html {cursor: url("../img/cur/needle-default-6422.png"), default;
+}
+a, button, span {cursor: url("../img/cur/ophthalmoscope_642.png"), pointer;
+}
+.pointer  {cursor: url("../img/cur/ophthalmoscope_642.png"), pointer;
+}
+input, textarea {cursor: url("../img/cur/ophthalmoscope_64.png"), text;
+}
+.helpCursor {cursor: url("../img/cookie/cookie\ clicker\ help\ select.cur"), help;
+}
+.busyCursor {cursor: url("../img/cookie/cookie\ clicker\ busy.cur"), wait;
+}
+.unavailableCursor {cursor: url("../img/cookie/cookie\ clicker\ unavailable.cur"), not-allowed;
+}
+
+/* .trail {position: absolute;
+      z-index: 99;
+      top: -2px;
+      left: -2px;
+      width: 15px;
+      height: 15px;
+      background:rgb(0 100 20 / 50%);
+      border-radius: 50%;
+      pointer-events: none;
+      transition: transform 0.1s ease-out;
+} */
+
+
+/*This is for the dinamic colored background*/
+html {background: linear-gradient(-45deg, #ee7752, #e7dc3c, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;
+  }
+  50% {background-position: 100% 50%;
+  }
+  100% {background-position: 0% 50%;
+  }
+}
+
+
+/*In case it doesnt load well*/
+html {background-color: #AF63A3;
+}
+
+/*Sets the color and size of the whole web, makes the website smaller*/
+body    {margin: .75em;
+       border: .05em #000 solid;
+       border-top-left-radius: 1em;
+       border-top-right-radius: 1em;
+       border-bottom-left-radius: 1em;
+       border-bottom-right-radius: 1em;
+       background-color: #fff;
+       font-family: sans-serif;
+       overflow-x: clip;
+}
+
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 7em;
+       background-color: #ffba00;
+       display: flex;
+       border-top-left-radius: .5em;
+       border-top-right-radius: .5em;
+       position: sticky;
+       top: 0;
+       z-index: 5;
+       filter: blur(.025em);
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 15%;
+                   height: auto;
+                   margin: 0;
+                   font-size: 1.2em;
+}
+
+.headerMemiliki50   {width: 70%;
+                   display: flex;
+}
+
+/*This is the website's title*/
+h1  {width: 50%;
+   line-height:3em;
+   margin: auto;
+   text-align: center;
+   color: #000000;
+   font-size: clamp(1em, 2em, 2.5em);
+}
+
+/*Beginning of the menu buttons*/
+.menuForMemi {background: linear-gradient(138deg, #000000 15%, #001f2e 65%);
+            position: relative;
+            font-size: 17px;
+            padding: 0.7em 0.7em;
+            border-radius: 50px;
+            box-shadow: 0 0.5rem 1rem #0000001a;
+            transition: background 0.7s;
+}
+.menuForMemi:hover {background: linear-gradient(138deg, #ffffff 15%, #e6f7ff 65%);
+}
+.menuForMemi .menuIcon {display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      fill: #fff;
+                      transition: all 0.5s;
+}
+.menuForMemi:hover .menuIcon {fill: #000000;
+}
+
+.nowVisibleMenu {display: flex;
+               animation: fadeIn 0.5s ease-in-out forwards;
+}
+.notVisibleMenu {display: flex;
+               animation: fadeOut 0.5s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {opacity: 0;
+  }
+  to {opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;
+  }
+  to {opacity: 0;
+  }
+}
+
+/*Beginning of the "services" button*/
+
+.option1 {position: absolute;
+        top: -46%;
+        left: -28%;
+        transform: translate(-50%, -5px);
+        background: #fff;
+        fill: #001722;
+        padding: 10px;
+        border-radius: 50px;
+        transition: background 0.7s;
+        z-index: 1;
+        box-shadow: 0 2px 4px #00000033;
+        align-items: center;
+        justify-content: center;
+}
+.menuForMemi:hover .option1:hover {background: #001722;
+                                 fill: #fff;
+}
+/*Ending of the "services" button*/
+
+
+/*Beginning of the "Location" button*/
+.option3 {position: absolute;
+        top: 115%;
+        left: -87%;
+        transform: translateX(70%);
+        background: #fff;
+        fill: #001722;
+        padding: 10px;
+        border-radius: 50px;
+        transition: background 0.7s;
+        z-index: 1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        justify-content: center;
+}
+.menuForMemi:hover .option3:hover {background: #3c4caa;
+                                 fill: #fff;
+}
+/*Ending of the "location" button*/
+
+
+/*Beginning of the "PrayerTimes" button*/
+.option2 {position: absolute;
+        top: 43%;
+        left: -148%;
+        transform: translateX(70%);
+        background: #fff;
+        fill: #001722;
+        padding: 10px;
+        border-radius: 50px;
+        transition: background 0.7s;
+        z-index: 1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        justify-content: center;
+}
+.menuForMemi:hover .option2:hover {background: #096090;
+                                 fill: #fff;
+}
+/*Ending of the "PrayerTimes" button*/
+
+
+/*Beginning of the "usersGuide" button*/
+.usersGuide {position: absolute;
+           top: 113%;
+           left: 6%;
+           transform: translateX(70%);
+           background: #fff;
+           fill: #001722;
+           padding: 10px;
+           border-radius: 50px;
+           transition: background 0.7s;
+           z-index: 1;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+           align-items: center;
+           justify-content: center;
+}
+.menuForMemi:hover .usersGuide:hover {background: #ff4500;
+                                    fill: #fff;
+}
+/*Beginning of the "usersGuide" button*/
+
+
+/*Beginning of the "WhatsApp" button*/
+.sendWA {position: absolute;
+       top: 130%;
+       left: -199%;
+       transform: translateX(80%);
+       background: #fff;
+       fill: #001722;
+       padding: 10px;
+       border-radius: 50px;
+       transition: background 0.7s;
+       z-index: 1;
+       box-shadow: 0 2px 4px #00000033;
+       align-items: center;
+       justify-content: center;
+}
+.menuForMemi:hover .sendWA:hover {background: #1db954;
+                                fill: #000000;
+}
+/*Ending of the "WhatsApp" button*/
+
+
+/*Beginning of the "fixedButtons" button*/
+.everyButton {position: absolute;
+            top: 5%;
+            left: 6%;
+            width: 3em;
+            height: 3em;
+            z-index: -1;
+}
+
+/* .menuForMemi:hover .everyButton {
+top: -110%;
+opacity: 1;
+
+border-radius: 50%;
+z-index: -1;
+} */
+
+.container    {width: 3em;
+             margin: auto;
+             margin-top: 1em;
+}
+/*Ending of the menu buttons*/
+
+
+/****Content****/
+/*Here is where the content lays. Used flex for more responsive options*/
+main    {display: flex;
+         text-align: center;
+         width: 100%;
+         flex-direction: row;
+         flex-wrap: wrap;
+         align-content: center;
+         justify-content: center;
+         align-items: center;
+         overflow-x: clip;
+}
+
+
+.sideTitle     {font-size: 2em;
+                margin: 1em 0 0 0;
+                line-height: 1.5em;
+}
+
+h2   {margin: auto;
+      font-size: 1.1em;
+      line-height: 1.1em;
+      text-decoration: underline;
+}
+
+section   {width: 95%;
+           height: auto;
+           display: flex;
+           flex-wrap: wrap;
+           margin: 0em 0em 5em 0em;
+}
+
+article   {width: 50%;
+           height: auto;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+}
+
+.imgexpl  {width: 100%;
+           height: 17em;
+           margin: 3em 0 3em 0;
+}
+
+.imgexplart    {width: 15em;
+                height: 15em;
+                margin: auto;
+                border: .085em #000 solid;
+                border-top-left-radius: 1em;
+                border-top-right-radius: 1em;
+                border-bottom-left-radius: 1em;
+                border-bottom-right-radius: 1em;
+                animation-name: imgSizes;
+                animation-duration: 2s;
+}
+
+
+.artext   {width: 95%;
+           text-align: justify;
+           animation-name: fontConverts;
+           animation-duration: 2s;
+}
+
+.titleFCArticle {font-size: .85em;
+}
+
+@keyframes fontConverts  {
+from {font-size: 0.01em;
+}
+to   {font-size: 1em;
+}
+}
+@keyframes imgSizes  {
+from {width: 0.01em;
+}
+to   {width: 15em;
+}
+}
+
+/*Needed ul and li*/
+ul,
+li   {list-style: none;
+      list-style-type: disclosure-open;
+      line-height: 1.2em;
+}
+
+.separationClassHR  {width: 85%;
+                     border: 0.25em #777 solid;
+                     border-top-left-radius: 2em;
+                     border-top-right-radius: 2em;
+}
+
+/**The middle of the webside**/
+.middleSideSite     {width: 100%;
+                     margin: 1em 0 1em 0;
+}
+
+.centeredText {width: 40%;
+               border: .15em #000000 double;
+               text-align: center;
+               font-size: 1.05em;
+               color: #fff;
+}
+
+.firstDiv {border-top-left-radius: 2em;
+           border-bottom-right-radius: 2em;
+           height: auto;
+           padding-top: 2em;
+           padding-bottom: 2em;
+           background-image: linear-gradient(45deg, #202020, transparent);
+}
+
+.mainyContainer {width: 100%;
+                 height: 40em;
+                 margin: 1em 0 1em 0;
+                 display: flex;
+                 /* border: .1em #000 solid; */
+                 background-image: url(../img/img-services/pic1.jpg);
+                 background-position: center;
+                 background-position-y: 80%;
+                 background-repeat: no-repeat;
+                 background-size: 95em 75em;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: center;
+                 transition: background-image 1s ease-in-out;
+}
+.firstSpanMC  {font-size: .9em;
+}
+/**End of The middle of the webside**/
+
+/**Button to go to comms webside**/
+
+.comms    {width: 100%;
+           height: auto;
+           display: flex;
+           flex-direction: column;
+           align-content: center;
+           align-items: center;
+}
+
+.commsButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .25em;
+  margin: 1em 0em 2em 0em;
+  padding: 1em 2.1em;
+  border: .25em solid;
+  border-color: transparent;
+  font-size: 1em;
+  background-color: #282828;
+  border-radius: 6.25em;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 .15em greenyellow;
+  cursor: pointer;
+  overflow: clip;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.commsButton svg {
+  position: absolute;
+  width: 1.5em;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.commsButton .theArrow1 {
+  right: 1em;
+}
+
+.commsButton .theArrow2 {
+  left: -25%;
+}
+
+.commsButton .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.25em;
+  height: 1.25em;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.commsButton .textCommsButton {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-.75em);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.commsButton:hover {
+  box-shadow: 0 0 0 .75em transparent;
+  color: #212121;
+  border-radius: .75em;
+}
+
+.commsButton:hover .theArrow1 {
+  right: -25%;
+}
+
+.commsButton:hover .theArrow2 {
+  left: 1em;
+}
+
+.commsButton:hover .textCommsButton {
+  transform: translateX(.75em);
+}
+
+.commsButton:hover svg {
+  fill: #212121;
+}
+
+.commsButton:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 .25em greenyellow;
+}
+
+.commsButton:hover .circle {
+  width: 13.75em;
+  height: 13.75em;
+  opacity: 1;
+}
+/**End of the Button to go to comms webside**/
+
+/**Button to go top**/
+#backToTopBtn {display: none; /* Hidden by default */
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 2em; /* Place the button 30px from the right */
+               z-index: 99; /* Make sure it does not overlap */
+               outline: none; /* Remove outline */
+               background-color: #31e200; /* Set a background color */
+               color: white; /* Text color */
+               padding: .6em; /* Some padding */
+               border-radius: .75em; /* Rounded corners */
+               font-size: .9em; /* Increase font size */
+               cursor: url("../img/cur/ophthalmoscope_642.png"), pointer;
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
+         border-top-left-radius: 1.5em;
+         border-top-right-radius: 1.5em;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 15%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+                     text-align: center;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     flex-direction: column;
+}
+.footerMemiliki50   {width: 70%;
+}
+
+
+
+/**Smaller devices**/
+/****1024 or less****/
+@media (max-width: 1024px) {
+
+body  {overflow-x: clip;
+}
+
+.trail {display: none;
+}
+
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5.5em;
+         background-color: #ffba00;
+         display: flex;
+         border-top-left-radius: .5em;
+         border-top-right-radius: .5em;
+         position: sticky;
+         top: 0;
+         z-index: 5;
+         filter: blur(.025em);
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.45em;
+}
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+}
+/****End of 1024 or less****/
+
+
+/****768 or less****/
+@media (max-width: 768px) {
+body  {overflow-x: clip;
+}
+
+.trail {display: none;
+}
+
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5.5em;
+         background-color: #ffba00;
+         display: flex;
+         border-top-left-radius: .5em;
+         border-top-right-radius: .5em;
+         position: sticky;
+         top: 0;
+         z-index: 5;
+         filter: blur(.025em);
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.3em;
+}
+
+
+.sideTitle     {font-size: 2em;
+                margin: 1em 0 0 0;
+                line-height: 1.5em;
+}
+
+h2   {margin: 0em 0em 0em 0em;
+      font-size: 1em;
+      line-height: 1.1em;
+      text-decoration: underline;
+}
+
+section   {width: 95%;
+           height: auto;
+           display: flex;
+           flex-wrap: wrap;
+           margin: 2em 0em 5em 0em;
+}
+
+article   {width: 49%;
+           height: auto;
+           border: 0.01em #000 solid;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+}
+
+.imgexpl  {width: 100%;
+           height: 10em;
+           margin: 3em 0 0em 0;
+}
+
+.imgexplart    {width: 10.25em;
+                height: 8.25em;
+                margin: auto;
+}
+
+
+.artext   {width: 95%;
+           font-size: .8em;
+           text-align: justify;
+           animation-name: fontConverts;
+           animation-duration: 2s;
+}
+
+.titleFCArticle {font-size: .75em;
+}
+
+@keyframes fontConverts  {
+from {font-size: 0.01em;
+}
+to   {font-size: .8em;
+}
+}
+@keyframes imgSizes  {
+from {width: 0.01em;
+}
+to   {width: 10.25em;
+}
+}
+
+/*Needed ul and li*/
+ul,
+li   {list-style: none;
+      list-style-type: disclosure-open;
+      line-height: 1.2em;
+}
+li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.separationClassHR  {width: 85%;
+                     border: 0.25em #777 solid;
+                     border-top-left-radius: 2em;
+                     border-top-right-radius: 2em;
+}
+
+/**The middle of the webside**/
+.middleSideSite     {width: 100%;
+                     margin: 1em 0 1em 0;
+}
+
+.centeredText {width: 95%;
+               border: .15em #000000 double;
+               text-align: center;
+               font-size: 1.05em;
+               color: #fff;
+}
+
+.firstDiv {border-top-left-radius: 2em;
+           border-bottom-right-radius: 2em;
+           height: auto;
+           padding-top: 2em;
+           padding-bottom: 2em;
+           background-image: linear-gradient(45deg, #202020, transparent);
+}
+
+.mainyContainer {width: 100%;
+                 height: 25em;
+                 margin: 1em 0 1em 0;
+                 display: flex;
+                 /* border: .1em #000 solid; */
+                 background-image: url(../img/img-services/pic1.jpg);
+                 background-position: center;
+                 background-position-y: 80%;
+                 background-repeat: no-repeat;
+                 background-size: 95em 75em;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: center;
+                 transition: background-image 1s ease-in-out;
+}
+.firstSpanMC  {font-size: .9em;
+}
+/**End of The middle of the webside**/
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: .85em;
+                     text-align: center;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     flex-direction: column;
+}
+.footerMemiliki50   {width: 60%;
+}
+}
+/****End of 768px or less****/
+
+
+/****400px or less****/
+@media (max-width: 400px) {
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5em;
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.2em;
+}
+
+.container  {margin-top: .5em;
+}
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: .85em;
+                     text-align: center;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     flex-direction: column;
+}
+.footerMemiliki50   {width: 60%;
+}
+}
+/****End of 400px or less****/
+
+
+/****399px or less****/
+@media (min-width: 280px) and (max-width: 399px) {
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.2em;
+}
+
+.container  {margin-top: .5em;
+}
+
+
+.sideTitle     {font-size: 2em;
+                margin: 1em 0 0 0;
+                line-height: 1.5em;
+}
+
+h2   {margin: 0em 0em 0em 0em;
+      font-size: 1em;
+      line-height: 1.1em;
+      text-decoration: underline;
+}
+
+section   {width: 95%;
+           height: auto;
+           display: flex;
+           flex-wrap: wrap;
+           margin: 2em 0em 5em 0em;
+}
+
+article   {width: 49%;
+           height: auto;
+           border: 0.01em #000 solid;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+}
+
+.imgexpl  {width: 100%;
+           height: 10em;
+           margin: 3em 0 0em 0;
+}
+
+.imgexplart    {width: 7.25em;
+                height: 7.25em;
+                margin: auto;
+}
+
+
+.artext   {width: 95%;
+           font-size: .8em;
+           text-align: justify;
+           animation-name: fontConverts;
+           animation-duration: 2s;
+}
+
+.titleFCArticle {font-size: .75em;
+}
+
+@keyframes fontConverts  {
+from {font-size: 0.01em;
+}
+to   {font-size: .8em;
+}
+}
+@keyframes imgSizes  {
+from {width: 0.01em;
+}
+to   {width: 8em;
+}
+}
+
+/*Needed ul and li*/
+ul,
+li   {list-style: none;
+      list-style-type: disclosure-open;
+      line-height: 1.2em;
+}
+li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.separationClassHR  {width: 85%;
+                     border: 0.25em #777 solid;
+                     border-top-left-radius: 2em;
+                     border-top-right-radius: 2em;
+}
+
+/**The middle of the webside**/
+.middleSideSite     {width: 100%;
+                     margin: 1em 0 1em 0;
+}
+
+.centeredText {width: 95%;
+               border: .15em #000000 double;
+               text-align: center;
+               font-size: 1.05em;
+               color: #fff;
+}
+
+.firstDiv {border-top-left-radius: 2em;
+           border-bottom-right-radius: 2em;
+           height: auto;
+           padding-top: 2em;
+           padding-bottom: 2em;
+           background-image: linear-gradient(45deg, #202020, transparent);
+}
+
+.mainyContainer {width: 100%;
+                 height: 25em;
+                 margin: 1em 0 1em 0;
+                 display: flex;
+                 /* border: .1em #000 solid; */
+                 background-image: url(../img/img-services/pic1.jpg);
+                 background-position: center;
+                 background-position-y: 80%;
+                 background-repeat: no-repeat;
+                 background-size: 95em 75em;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: center;
+                 transition: background-image 1s ease-in-out;
+}
+.firstSpanMC  {font-size: .9em;
+}
+/**End of The middle of the webside**/
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 6em;
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 25%;
+}
+.footerMemiliki50   {width: 50%;
+}
+}
+/****End of 399px or less****/

@@ -18,7 +18,7 @@ input, textarea {cursor: url("../img/cur/ophthalmoscope_64.png"), text;
 .unavailableCursor {cursor: url("../img/cookie/cookie\ clicker\ unavailable.cur"), not-allowed;
 }
 
-.trail {position: absolute;
+/* .trail {position: absolute;
         z-index: 99;
         top: -2px;
         left: -2px;
@@ -28,7 +28,7 @@ input, textarea {cursor: url("../img/cur/ophthalmoscope_64.png"), text;
         border-radius: 50%;
         pointer-events: none;
         transition: transform 0.1s ease-out;
-}
+} */
 
 
 /*This is for the dinamic colored background*/
@@ -53,22 +53,20 @@ html {background-color: #AF63A3;
 
 /*Sets the color and size of the whole web, makes the website smaller*/
 body    {margin: .75em;
-         border: .05em #000 solid;
          border-top-left-radius: 1em;
          border-top-right-radius: 1em;
          border-bottom-left-radius: 1em;
          border-bottom-right-radius: 1em;
          background-color: #fff;
          font-family: sans-serif;
-         overflow-x: hidden;
+         overflow-x: clip;
 }
 
 /***HEADER***/
 /*Here is where the header starts, contains the nav, title and logo*/
 header  {height: 7em;
-         background-color: #ff0000;
+         background-color: #ffba00;
          display: flex;
-         border: .25em #000 solid;
          border-top-left-radius: .5em;
          border-top-right-radius: .5em;
          position: sticky;
@@ -83,6 +81,7 @@ header  {height: 7em;
                      margin: 0;
                      font-size: 1.2em;
 }
+
 .headerMemiliki50   {width: 70%;
                      display: flex;
 }
@@ -173,7 +172,7 @@ h1  {width: 50%;
           align-items: center;
           justify-content: center;
 }
-.menuForMemi:hover .option3:hover {background: #8c9eff;
+.menuForMemi:hover .option3:hover {background: #3c4caa;
                                    fill: #fff;
 }
 /*Ending of the "location" button*/
@@ -244,10 +243,10 @@ h1  {width: 50%;
 
 /*Beginning of the "fixedButtons" button*/
 .everyButton {position: absolute;
-              top: -110%;
-              left: -115%;
-              width: 150px;
-              height: 150px;
+              top: 5%;
+              left: 6%;
+              width: 3em;
+              height: 3em;
               z-index: -1;
 }
 
@@ -276,15 +275,31 @@ main    {display: flex;
          align-content: center;
          justify-content: space-between;
          align-items: center;
+         overflow-x: clip;
+}
+
+.mainyContainer {width: 100%;
+                 height: 40em;
+                 display: flex;
+                 /* border: .1em #000 solid; */
+                 background-image: url(../img/picc1.jpeg);
+                 background-position: center;
+                 background-position-y: 80%;
+                 background-repeat: no-repeat;
+                 background-size: 95em 75em;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: flex-start;
+                 transition: background-image 1s ease-in-out;
 }
 
 /*Centers the text of the first div*/
-.centeredText {width: 60%;
+.centeredText {width: 40%;
                height: 5em;
-               margin: auto;
-               border: .15em #000000 dotted;
+               border: .15em #000000 double;
                text-align: center;
                font-size: 1.35em;
+               color: #fff;
 }
 
 .firstDiv {border-top-left-radius: 2em;
@@ -292,44 +307,84 @@ main    {display: flex;
            /* border-bottom-left-radius: 2em; */
            border-bottom-right-radius: 2em;
            height: auto;
-           margin-top: 3em;
-           margin-bottom: 5em;
            padding-top: 2em;
            padding-bottom: 2em;
-           background-image: linear-gradient(to bottom right, #0267ff, #9a328a);
+           background-image: linear-gradient(45deg, #202020, transparent);
+           /* background-image: linear-gradient(to bottom right, #0267ff, #9a328a); */
+}
+
+.separationClassHR  {width: 85%;
+                     border: 0.25em #777 solid;
+                     border-top-left-radius: 2em;
+                     border-top-right-radius: 2em;
 }
 
 /*Here lays the information about the certifikat and affiliations*/
 .affilit,
-.certifit  {width: 40em;
+.certifit  {width: 30em;
             height: auto;
             margin: auto;
             text-align: center;
-            margin-bottom: 4.5em;
+            margin-bottom: 2.5em;
 }
 
 /*Design for the buttons used to display the information about the cert. and aff.*/
-.buttonForDetails   {width: 40%;
-                     height: auto;
-                     margin-bottom: 2em;
-                     border-top-left-radius: 2em;
-                     border-top-right-radius: 2em;
-                     border-bottom-left-radius: 2em;
-                     border-bottom-right-radius: 2em;
-                     border: .15em #000 solid;
-                     background-color: #a53895;
-                     transition: .5s;
+.buttonForDetails {
+ display: inline-block;
+ width: 10.5em;
+ height: 4em;
+ border-radius: .8em;
+ border: .05em solid #03045e;
+ background-color: #c7ffb9;
+ position: relative;
+ overflow: clip;
+ transition: all 0.5s ease-in;
+ z-index: 1;
 }
-.buttonForDetails:hover   {width: 45%;
-                           height: auto;
-                           border: .15em #ff0000 solid;
-                           background-color: #f7a7eb;
+
+.buttonForDetails::before,
+.buttonForDetails::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: clip;
+ z-index: -1;
+}
+
+.buttonForDetails::before {
+ left: -.8em;
+ background: #f00;
+}
+
+.buttonForDetails::after {
+ right: -.8em;
+ background: #fff;
+}
+
+.buttonForDetails:hover::before,
+.buttonForDetails:hover::after {
+ width: 58%;
+}
+
+.buttonForDetails:hover h2 {
+ color: #ccb311;
+ transition: 0.3s;
+}
+
+.buttonForDetails h2 {
+ color: #03045e;
+ font-size: 1.05em;
+ transition: all 0.3s ease-in;
 }
 
 /*This is used for the img inside of the hidden divs containing the info mentioned before*/
 .lilimg {
   display: none;
-  width: 30em;
+  width: 25em;
   height: 17em;
   margin: auto;
   transition: transform 0.6s, font-size 0.6s;
@@ -448,6 +503,7 @@ section {
   align-content: center;
   justify-content: space-evenly;
   align-items: stretch;
+  margin-bottom: 1.5em;
 }
 section h2 {
   width: 100%;
@@ -524,6 +580,103 @@ article {
 }
 
 
+/*Start of the button for services*/
+.shoppingButton {width: 100%;
+                 display: flex;
+                 margin-bottom: 1em;
+                 justify-content: center;
+                 align-items: center;
+}
+
+.leMoreS,
+.leMoreS::after  {width: 10em;
+                  height: 2.5em;
+                  line-height: 2em;
+                  font-size: 1.1em;
+                  font-family: 'Bebas Neue', sans-serif;
+                  background: linear-gradient(-78deg, transparent 5%, #f00 5%);
+                  border: 0;
+                  color: #fff;
+                  letter-spacing: 3px;
+                  box-shadow: 6px 0px 0px #dcdcdc;
+                  outline: transparent;
+                  position: relative;
+                  user-select: none;
+                  -webkit-user-select: none;
+                  touch-action: manipulation;
+}
+  
+  .leMoreS::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    content: 'Pesan sekarang';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #353535 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+  }
+
+  .leMoreS:hover::after {
+    animation: 2s glitch;
+    animation-timing-function: steps(3, end);
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
+  }
+
 
 /**Button to go top**/
 #backToTopBtn {display: none; /* Hidden by default */
@@ -532,9 +685,9 @@ article {
                right: 2em; /* Place the button 30px from the right */
                z-index: 99; /* Make sure it does not overlap */
                outline: none; /* Remove outline */
-               background-color: #27af01; /* Set a background color */
+               background-color: #31e200; /* Set a background color */
                color: white; /* Text color */
-               padding: 15px; /* Some padding */
+               padding: .6em; /* Some padding */
                border-radius: .75em; /* Rounded corners */
                font-size: .9em; /* Increase font size */
                cursor: url("../img/cur/ophthalmoscope_642.png"), pointer;
@@ -552,7 +705,9 @@ html {scroll-behavior: smooth;
 footer  {height: 7em;
          background-color: #ffffff;
          display: flex;
-         border: .25em #000 solid;
+         border-top: .125em #000 solid;
+         border-top-left-radius: 1.5em;
+         border-top-right-radius: 1.5em;
          border-bottom-left-radius: .5em;
          border-bottom-right-radius: .5em;
          filter: blur(.025em);
@@ -575,10 +730,13 @@ footer  {height: 7em;
 
 
 
+
 /**Smaller devices**/
-@media (max-width: 768px) {
-body  {margin: .5em;
-       overflow-x: hidden;
+
+/****1024 or less****/
+@media (max-width: 1024px) {
+
+body  {overflow-x: clip;
 }
 
 .trail {display: none;
@@ -586,10 +744,9 @@ body  {margin: .5em;
 
 /***HEADER***/
 /*Here is where the header starts, contains the nav, title and logo*/
-header  {height: 7em;
-         background-color: #ff0000;
+header  {height: 5.5em;
+         background-color: #ffba00;
          display: flex;
-         border: .25em #000 solid;
          border-top-left-radius: .5em;
          border-top-right-radius: .5em;
          position: sticky;
@@ -611,13 +768,13 @@ header  {height: 7em;
 h1  {width: 95%;
      line-height: 1em;
      margin: auto;
-     font-size: 1.7em;
+     font-size: 1.45em;
 }
 
 
 /****Content****/
 /*Centers the text of the first div*/
-.centeredText {width: 90%;
+.centeredText {width: 60%;
                font-size: 1em;
 }
 
@@ -644,6 +801,7 @@ h1  {width: 95%;
                  height: 24em;
                  font-size: .8em;
                  margin-bottom: 0;
+                 overflow-x: clip;
 }
 
 /*Splits the width at 50% for ever div so they can coexist at the same level, picture and info*/
@@ -652,13 +810,13 @@ h1  {width: 95%;
                  height: 24em;
 }
 .memiBox50L .lilimg,
-.memiBox50R .lilimg   {width: 14em;
+.memiBox50R .lilimg   {width: 16.5em;
 }
 
 .memiBox50L .lilfig,
-.memiBox50R .lilfig   {width: 12em;
-                      height: 12em;
-                      margin: auto;
+.memiBox50R .lilfig   {width: 16.5em;
+                       height: 16.5em;
+                       margin: auto;
 }
 .memiBox50L figcaption,
 .memiBox50R figcaption    {width: 100%;
@@ -688,12 +846,8 @@ h1  {width: 95%;
 section {
   width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-evenly;
   align-items: stretch;
+  overflow-x: clip;
 }
 section h2 {font-size: 1em;
             line-height: 2.5em;
@@ -766,7 +920,207 @@ html {scroll-behavior: smooth;
 footer  {height: 7em;
          background-color: #ffffff;
          display: flex;
-         border: .25em #000 solid;
+         border-top: .125em #000 solid;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+}
+/****End of 1024 or less****/
+
+/****768 or less****/
+@media (max-width: 768px) {
+body  {overflow-x: clip;
+}
+
+.trail {display: none;
+}
+
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5.5em;
+         background-color: #ffba00;
+         display: flex;
+         border-top-left-radius: .5em;
+         border-top-right-radius: .5em;
+         position: sticky;
+         top: 0;
+         z-index: 5;
+         filter: blur(.025em);
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.3em;
+}
+
+
+/****Content****/
+/*Centers the text of the first div*/
+.centeredText {width: 60%;
+               font-size: 1em;
+}
+
+/*Here lays the information about the certifikat and affiliations*/
+.affilit,
+.certifit  {width: 22em;
+}
+
+.buttonForDetails h2 {font-size: .9em;
+}
+
+/*This is used for the img inside of the hidden divs containing the info mentioned before*/
+.lilimg {width: 18em;
+}
+
+.lilfig {
+  height: 11em;
+}
+
+/*Here is where the info about the business starts, this is used in most part of the web*/
+.memicontainerL,
+.memicontainerR {display: flex;
+                 width: 90%;
+                 height: 24em;
+                 font-size: .8em;
+                 margin-bottom: 0;
+                 overflow-x: clip;
+}
+
+/*Splits the width at 50% for ever div so they can coexist at the same level, picture and info*/
+.memiBox50L,
+.memiBox50R     {width: 50%;
+                 height: 24em;
+}
+.memiBox50L .lilimg,
+.memiBox50R .lilimg   {width: 14em;
+}
+
+.memiBox50L .lilfig,
+.memiBox50R .lilfig   {width: 12em;
+                      height: 12em;
+                      margin: auto;
+}
+.memiBox50L figcaption,
+.memiBox50R figcaption    {width: 100%;
+                           height: 1.5em;
+                           position: relative;
+                           top: -6em;
+                           font-size: 1.2em;
+}
+
+.memibenefits  {width: 100%;
+                height: 15em;
+                margin: auto;
+                text-align: justify;
+                font-size: 1.2em;
+}
+.memibenefits h3    {width: 100%;
+                     font-weight: bolder;
+                     text-align: center;
+}
+
+.titleFC  {font-family: cursive;
+           -webkit-text-stroke: .015em #ffdc21;
+}
+/****/
+
+/*Section starts with the different services. Uses articles inside and can be copy/paste*/
+section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+  overflow-x: clip;
+}
+section h2 {font-size: 1em;
+            line-height: 2.5em;
+}
+article {
+  width: 40%;
+  height: 15em;
+  margin: 1em 1em 1em 1em;
+}
+
+/*Edits the imgs inside*/
+.lilimgart {width: 10em;
+            height: 10em;
+}
+
+/*Imgs used left and right, purpose was to add animations*/
+.lilfigartL,
+.lilfigartR {width: 10em;
+             height: 10em;
+}
+
+/* New classes for visibility control */
+.memiH-l {
+  opacity: 0;
+  transform: translateX(-50em); /* For left elements */
+}
+#spanLilfig1 {top: 4em;
+              left: -12em;
+}
+#spanLilfig2 {top: 4em;
+}
+#spanLilfig3 {top: 13.7em;
+              left: -18.5em;
+}
+
+.memiH-r {
+  opacity: 0;
+  transform: translateX(50em); /* For right elements */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 2s;
+}
+
+
+.titleFCArticle     {font-family: cursive;
+                     -webkit-text-stroke: .015em #000;
+}
+
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
          border-bottom-left-radius: .5em;
          border-bottom-right-radius: .5em;
          filter: blur(.025em);
@@ -786,3 +1140,410 @@ footer  {height: 7em;
 .footerMemiliki50   {width: 60%;
 }
 }
+/****End of 768px or less****/
+
+/****500px or less****/
+@media (max-width: 500px) {
+
+.mainyContainer {background-size: 30em 75em;
+                 flex-direction: column-reverse;
+                 justify-content: flex-start;
+                 align-items: flex-end;
+}
+}
+/****End of 500px or less****/
+
+/****400px or less****/
+@media (max-width: 400px) {
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5em;
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.2em;
+}
+
+.container  {margin-top: .5em;
+}
+
+/****Content****/
+/*Centers the text of the first div*/
+.centeredText {width: 60%;
+               font-size: 1em;
+}
+
+/*Here lays the information about the certifikat and affiliations*/
+.affilit,
+.certifit  {width: 22em;
+}
+
+.buttonForDetails h2 {font-size: .9em;
+}
+
+/*This is used for the img inside of the hidden divs containing the info mentioned before*/
+.lilimg {width: 18em;
+}
+
+.lilfig {
+  height: 11em;
+}
+
+/*Here is where the info about the business starts, this is used in most part of the web*/
+.memicontainerL,
+.memicontainerR {display: flex;
+                 width: 95%;
+                 height: 24em;
+                 font-size: .8em;
+                 margin-bottom: 0;
+                 overflow-x: clip;
+}
+
+/*Splits the width at 50% for ever div so they can coexist at the same level, picture and info*/
+.memiBox50L,
+.memiBox50R     {width: 50%;
+                 height: 24em;
+}
+.memiBox50L .lilimg,
+.memiBox50R .lilimg   {width: 14em;
+}
+
+.memiBox50L .lilfig,
+.memiBox50R .lilfig   {width: 12em;
+                      height: 12em;
+                      margin: auto;
+}
+.memiBox50L figcaption,
+.memiBox50R figcaption    {width: 100%;
+                           height: 1.5em;
+                           position: relative;
+                           top: -6em;
+                           font-size: 1.2em;
+}
+
+.memibenefits  {width: 100%;
+                height: 15em;
+                margin: auto;
+                text-align: justify;
+                font-size: 1.2em;
+}
+.memibenefits h3    {width: 100%;
+                     font-weight: bolder;
+                     text-align: center;
+}
+
+.titleFC  {font-family: cursive;
+           -webkit-text-stroke: .015em #ffdc21;
+}
+/****/
+
+/*Section starts with the different services. Uses articles inside and can be copy/paste*/
+section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+  overflow-x: clip;
+}
+section h2 {font-size: 1em;
+            line-height: 2.5em;
+}
+article {
+  width: 35%;
+  height: 12em;
+  margin: 1em 1em 1em 1em;
+}
+
+/*Edits the imgs inside*/
+.lilimgart {width: 7.5em;
+            height: 7.5em;
+}
+
+/*Imgs used left and right, purpose was to add animations*/
+.lilfigartL,
+.lilfigartR {width: 7.5em;
+             height: 7.5em;
+}
+
+figcaption  {font-size: .9em;
+}
+
+/* New classes for visibility control */
+.memiH-l {
+  opacity: 0;
+  transform: translateX(-50em); /* For left elements */
+}
+#spanLilfig1 {top: 4em;
+              left: -12em;
+}
+#spanLilfig2 {top: 4em;
+}
+#spanLilfig3 {top: 13.7em;
+              left: -18.5em;
+}
+
+.memiH-r {
+  opacity: 0;
+  transform: translateX(50em); /* For right elements */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 2s;
+}
+
+
+.titleFCArticle     {font-family: cursive;
+                     -webkit-text-stroke: .015em #000;
+}
+
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 7em;
+         background-color: #ffffff;
+         display: flex;
+         border-top: .125em #000 solid;
+         border-bottom-left-radius: .5em;
+         border-bottom-right-radius: .5em;
+         filter: blur(.025em);
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: .85em;
+                     text-align: center;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     flex-direction: column;
+}
+.footerMemiliki50   {width: 60%;
+}
+}
+/****End of 400px or less****/
+
+/****399px or less****/
+@media (min-width: 280px) and (max-width: 399px) {
+/***HEADER***/
+/*Here is where the header starts, contains the nav, title and logo*/
+header  {height: 5em;
+}
+
+.headerMemiliki25,
+.headerMemiliki50   {width: 20%;
+                     height: auto;
+                     margin: 0;
+                     font-size: 1.2em;
+}
+.headerMemiliki50   {width: 60%;
+}
+
+/*This is the website's title*/
+h1  {width: 95%;
+     line-height: 1em;
+     margin: auto;
+     font-size: 1.2em;
+}
+
+.container  {margin-top: .5em;
+}
+
+/****Content****/
+/*Centers the text of the first div*/
+.centeredText {width: 60%;
+               font-size: 1em;
+}
+
+/*Here lays the information about the certifikat and affiliations*/
+.affilit,
+.certifit  {width: 16em;
+}
+
+.buttonForDetails h2 {font-size: .9em;
+}
+
+/*This is used for the img inside of the hidden divs containing the info mentioned before*/
+.lilimg {width: 12em;
+}
+
+.lilfig {
+  height: 8em;
+}
+
+/*Here is where the info about the business starts, this is used in most part of the web*/
+.memicontainerL,
+.memicontainerR {display: flex;
+                 width: 95%;
+                 height: 17.5em;
+                 font-size: .8em;
+                 margin-bottom: 0;
+                 overflow-x: clip;
+}
+
+/*Splits the width at 50% for ever div so they can coexist at the same level, picture and info*/
+.memiBox50L,
+.memiBox50R     {width: 45%;
+                 height: 17.5em;
+}
+.memiBox50L .lilimg,
+.memiBox50R .lilimg   {width: 8em;
+                       height: 17.5em;
+}
+
+.memiBox50L .lilfig,
+.memiBox50R .lilfig   {width: 8em;
+                      height: 8em;
+                      margin: auto;
+}
+.memiBox50L figcaption,
+.memiBox50R figcaption    {width: 100%;
+                           height: 1.5em;
+                           position: relative;
+                           top: -6em;
+                           font-size: 1.1em;
+}
+
+.memibenefits  {width: 100%;
+                height: 15em;
+                margin: auto;
+                text-align: justify;
+                font-size: 1em;
+}
+.memibenefits h3    {width: 100%;
+                     font-weight: bolder;
+                     text-align: center;
+}
+
+.titleFC  {font-family: cursive;
+           -webkit-text-stroke: .015em #ffdc21;
+}
+/****/
+
+/*Section starts with the different services. Uses articles inside and can be copy/paste*/
+section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+  overflow-x: clip;
+}
+section h2 {font-size: 1em;
+            line-height: 2.5em;
+}
+article {
+  width: 35%;
+  height: 10em;
+  margin: 1em 1em 1em 1em;
+}
+
+/*Edits the imgs inside*/
+.lilimgart {width: 5.5em;
+            height: 6.5em;
+}
+
+/*Imgs used left and right, purpose was to add animations*/
+.lilfigartL,
+.lilfigartR {width: 5.5em;
+             height: 6.5em;
+}
+
+figcaption  {font-size: .9em;
+}
+
+/* New classes for visibility control */
+.memiH-l {
+  opacity: 0;
+  transform: translateX(-50em); /* For left elements */
+}
+#spanLilfig1 {top: 3em;
+              left: -9em;
+}
+#spanLilfig2 {top: 11em;
+}
+#spanLilfig3 {top: 14.7em;
+              left: -18.5em;
+}
+
+.memiH-r {
+  opacity: 0;
+  transform: translateX(50em); /* For right elements */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 2s;
+}
+
+
+.titleFCArticle     {font-family: cursive;
+                     -webkit-text-stroke: .015em #000;
+}
+
+
+
+/**Button to go top**/
+#backToTopBtn {display: block;
+               position: fixed; /* Fixed/sticky position */
+               bottom: 7em; /* Place the button at the bottom of the page */
+               right: 1em; /* Place the button 30px from the right */
+}
+
+#backToTopBtn:hover {background-color: #007a76; /* Add a dark-grey background on hover */
+}
+
+/* Smooth scrolling */
+html {scroll-behavior: smooth;
+}
+/**End of the Button to go top**/
+
+/*Footer of the website*/
+footer  {height: 6em;
+}
+
+.footerMemiliki25,
+.footerMemiliki50   {width: 25%;
+}
+.footerMemiliki50   {width: 50%;
+}
+}
+/****End of 399px or less****/
