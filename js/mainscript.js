@@ -35,11 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             option.addEventListener("click", function() {
                 const className = option.classList[0];
                 if (urls[className]) {
-                    let currentPath = window.location.pathname;
-                    if (currentPath.includes(basePath)) {
-                        currentPath = currentPath.split(basePath)[0];
-                    }
-                    const fullPath = `${window.location.origin}${currentPath}${urls[className]}`;
+                    const fullPath = `${basePath}${urls[className]}`;
                     window.location.href = fullPath;
                 }
             });
